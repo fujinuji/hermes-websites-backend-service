@@ -16,11 +16,16 @@ import java.util.List;
 import java.util.Optional;
 
 
+
 @Service
 public class EventServiceImplementation implements EventServiceInterface {
 
+    private final EventRepositoryInterface eventRepository;
+
     @Autowired
-    private EventRepositoryInterface eventRepository;
+    public EventServiceImplementation(EventRepositoryInterface eventRepository) {
+        this.eventRepository = eventRepository;
+    }
 
     @Autowired
     private ParticipationRepositoryInterface participationRepository;
